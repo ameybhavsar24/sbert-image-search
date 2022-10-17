@@ -4,18 +4,9 @@ import pickle
 import os 
 app = Flask(__name__)
 
-# class CPU_Unpickler(pickle.Unpickler):
-#     def find_class(self, module, name):
-#         if module == 'torch.storage' and name == '_load_from_bytes':
-#             return lambda b: torch.load(io.BytesIO(b), map_location='cpu')
-#         else: return super().find_class(module, name)
-
-# model = CPU_Unpickler(open('models/text_to_image.model.pkl', 'rb')).load()
 model = pickle.load(open('models/text_to_image_cpu.model.pkl', 'rb'))
 img_embed = pickle.load(open('models/image_embeddings.pkl', 'rb'))
 img_names = pickle.load(open('models/image_names.pkl', 'rb'))
-# with torch.loading_context(map_location='cpu'):
-#     model = pickle.load(open('models/text_to_image.model.pkl', 'rb'))  # In my case this call is buried deeper in torch-agnostic code
 
 @app.route('/')
 def hello():
