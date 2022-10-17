@@ -8,7 +8,7 @@ I built an image search app that lets you search from **25,000 nature-themed pho
  The application uses [**SentenceTransformers**](https://www.sbert.net/examples/applications/image-search/README.html), a Python framework for state-of-the-art sentence, text and image embeddings. 
 It provides models that allow embedding images and text into the same vector space. This allows us to find similar photos and implement image search.
 
-
+![image_search_ui](https://i.imgur.com/tL7QLPb.jpg)
 This app uses Flask as the server and TailwindCSS for frontend components.
 
 ## Installation
